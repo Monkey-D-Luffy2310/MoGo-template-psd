@@ -1,0 +1,67 @@
+.work {
+  padding-top: 11rem;
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    "h1 h3 h5 h6"
+    "h2 h4 h5 h7"
+  }
+  &-item {
+    height: 100%;
+    &:nth-child(2) {
+      grid-area: h2;
+    }
+    &:nth-child(3) {
+      grid-area: h3;
+    }
+    &:nth-child(4) {
+      grid-area: h4;
+    }
+    &:nth-child(5) {
+      grid-area: h5;
+    }
+    &:nth-child(6) {
+      grid-area: h6;
+    }
+    &:nth-child(7) {
+      grid-area: h7;
+    }
+    &-icon {
+      font-size: 3rem;
+    }
+    &-title {
+      text-transform: uppercase;
+      padding: 1.9rem 0;
+    }
+    &-desc {
+      font-family: $secondary-font;
+      font-size: 1.5rem;
+      font-weight: 300;
+      font-style: italic;
+    }
+  }
+  &-content {
+    color: white;
+  }
+  @include maxWidth(1023px) {
+    &-list {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: 
+      "h1 h3"
+      "h2 h4"
+      "h5 h6"
+      "h5 h7"
+    }
+  }
+  @include maxWidth(767px) {
+    &-list {
+      display: block;
+    }
+    &-item-img {
+      width: 100%;
+    }
+  }
+}
+
+@include hoverImage(".work-item", ".work-content", "false");

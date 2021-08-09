@@ -1,0 +1,104 @@
+.quote {
+  background-color: $gray-light-color;
+  padding: 7rem 0;
+  &-item {
+    padding: 0 5.5rem;
+    @include flexbox(center, center);
+  }
+  &-icon {
+    @include flexbox(center, center);
+    @include size(15rem, 15rem);
+    border: 3px solid $third-color;
+    flex-shrink: 0;
+    img {
+      @include flexbox(center, center);
+    }
+    margin-right: 6rem;
+  }
+  &-image {
+    @include size(21rem, 21rem);
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 3rem;
+    flex-shrink: 0;
+  }
+  &-desc {
+    font-size: 2.4rem;
+    color: $text-color;
+    font-style: italic;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    @include textClamp(3);
+  }
+  &-author {
+    font-family: $third-font;
+    font-size: 2.4rem;
+    padding-left: 7rem;
+    position: relative;
+    &:before {
+      content: " ";
+      position: absolute;
+      @include absoluteCenter("top");
+      @include size(6rem, 3px);
+      left: 0;
+      background-color: $primary-color;
+    }
+  }
+
+  //slick slider buttons
+  .slick-initialized .slick-slide {
+    display: flex;
+    margin: 0 5rem;
+  }
+  .slick-arrow {
+    color: $gray-dark-color;
+    position: absolute;
+    @include absoluteCenter("top"); 
+    padding: 1rem 2rem;
+    font-size: 4rem;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+  }
+  .slick-prev {
+    left: 0;
+    z-index: 10;
+  }
+  .slick-next {
+    right: 0;
+  }
+
+  @include maxWidth(767px) {
+    &-item {
+      padding: 0;
+    }
+    .slick-slider {
+      margin: 0 3rem;
+    }
+    .slick-initialized .slick-slide {
+      display: block;
+      margin: 0;
+    }
+    &-icon {
+      margin: 0 auto;
+      @include size(10rem, 10rem);
+      margin-bottom: 2rem;
+      img {
+        width: 4rem;
+      }
+      margin-right: 0;
+    }
+    &-desc {
+      font-size: 1.5rem;
+      display: block;
+    }
+    &-author {
+      font-size: 2rem;
+      padding-left: 6rem;
+      &:before {
+        width: 5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+.story {
+  padding: 11rem 0 11.5rem;
+  &-list {
+    margin-top: 4.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
+  }
+  &-heading {
+    position: relative;
+    &-date {
+      position: absolute;
+      left: -1rem;
+      bottom: 1rem;
+      background-color: $third-color;
+      color: white;
+      padding: 1.5rem;
+    }
+    &-day {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    &-month {
+      font-size: 1.5rem;
+      font-family: $secondary-font;
+      font-weight: 300;
+      font-style: italic;
+    }
+  }
+  &-info {
+    margin-top: 2rem;
+  }
+  &-title {
+    @include textClamp(1);
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $title-color;
+    margin-bottom: 2rem;
+  }
+  &-desc {
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+    color: $text-color;
+    padding-bottom: 2.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $gray-dark-color;
+  }
+  &-text {
+    @include textClamp(3);
+    word-break: break-word;
+  }
+  &-meta {
+    @include flexbox(center);
+    &-item {
+      margin-right: 2rem;
+    }
+    &-icon {
+      margin-right: 8px;
+      color: $third-color;
+    }
+    &-number {
+      font-family: $secondary-font;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 1.5rem;
+      color: $text-color;
+    }
+  }
+  @include maxWidth(1023px) {
+    padding: 6rem 0 4rem;
+  }
+  @include maxWidth(767px) {
+    &-list {
+      grid-template-columns: none;
+    }
+    &-item {
+      @include flexbox(center, center, column);
+      margin-bottom: 4rem;
+    }
+    &-info {
+      padding: 0 2rem;
+    }
+    &-title {
+      text-align: center;
+    }
+  }
+}
+
+.map {
+  padding: 6rem 0 5.5rem;
+  background: linear-gradient(to bottom, rgba(white, 0.9), rgba(white, 0.8)), url(../images/img-map.png) no-repeat center/ cover;
+  &-content {
+    text-align: center;
+  }
+  &-icon {
+    margin: 0 auto;
+  }
+  &-title {
+    margin-top: 1.5rem;
+    padding-bottom: 2rem;
+    color: $primary-color;
+    font-weight: bold;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 6rem;
+      height: 3px;
+      background-color: $primary-color;
+      bottom: 0;
+      @include absoluteCenter("left");
+    }
+  }
+}

@@ -1,0 +1,186 @@
+.footer {
+  padding: 7.5rem 0 2.5rem;
+  &-container {
+    display: grid;
+    grid-template-columns: 4.8fr 3.9fr 2.7fr;
+    grid-column-gap: 3rem;
+    padding-bottom: 7rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid $gray-dark-color;
+    grid-auto-rows: 1fr;
+  }
+  &-logo {
+    height: 5.5rem;
+    font-size: 4.6rem;
+    font-weight: bold;
+    color: $gray-dark-color;
+    padding-bottom: 2rem;
+    display: block;
+  }
+  &-desc {
+    margin-top: 2rem;
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+    color: $text-color;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+  &-followers {
+    margin-top: 5rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid $gray-dark-color;
+    color: #666666;
+    font-weight: 500;
+    span {
+      color: $title-color;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+  }
+  &-social {
+    &-text {
+      color: $text-color;
+      font-style: italic;
+      margin-right: 2rem;
+      font-size: 1.5rem;
+      font-family: $secondary-font;
+      font-style: italic;
+    }
+    &-link {
+      color: $third-color;
+      font-size: 1.5rem;
+      &:not(:first-child) {
+        margin-left: 1.5rem;
+      }
+    }
+  }
+  &-form {
+    margin-top: 3.5rem;
+    display: flex;
+    &-input {
+      width: 23rem;
+      padding: 1rem 1.4rem;
+      border: 1px solid $gray-dark-color;
+      outline: none;
+      &::placeholder {
+        color: $gray-dark-color;
+        font-size: 1.5rem;
+        font-family: $secondary-font;
+        font-weight: 300;
+        font-style: italic;
+      }
+    }
+    &-button {
+      padding: 1.4rem 3.5rem;
+      color: white;
+      font-weight: bold;
+      background-color: $third-color;
+      outline: none;
+      border: none;
+      text-transform: uppercase;
+    }
+  }
+  &-title {
+    text-transform: uppercase;
+    font-weight: 600;
+    height: 5.5rem;
+    margin-top: 5px;
+  }
+  &-blogs {
+    &-item {
+      @include flexbox(center, center);
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
+    &-img {
+      margin-right: 2rem;
+    }
+    &-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: $title-color;
+      @include textClamp(2);
+      margin-bottom: 1rem;
+      word-break: break-word;
+    }
+    &-desc {
+      font-size: 1.3rem;
+      font-family: $secondary-font;
+      color: $text-color;
+      font-weight: 300;
+      font-style: italic;
+    }
+  }
+  &-instagram {
+    &-title {
+      text-transform: uppercase;
+      font-weight: 600;
+      height: 5.5rem;
+      margin-top: 5px;
+    }
+    &-box {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-gap: 2px;
+      margin-bottom: 2rem;
+    }
+    &-img {
+      width: 100%;
+      height: 100%;
+    }
+    &-text {
+      font-size: 1.3rem;
+      font-family: $secondary-font;
+      font-style: italic;
+      color: $text-color;
+    }
+  }
+  &-bottom {
+    text-align: center;
+    font-weight: 600;
+    span {
+      color: $primary-color;
+    }
+  }
+  @include maxWidth(1023px) {
+    &-container {
+      grid-template-columns: none;
+      @include flexbox(center, center, column);
+    }
+    &-column {
+      width: 100%;
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
+    &-blogs {
+      @include flexbox(flex-start, flex-start, column);
+    }
+    &-title {
+      margin-bottom: 2rem;
+      height: auto;
+    }
+    &-instagram {
+      &-title {
+        height: auto;
+        margin-bottom: 2rem;
+      }
+      &-box {
+        padding-right: 20rem;
+      }
+    }
+  }
+  @include maxWidth(767px) {
+    padding-top: 4rem;
+    &-container {
+      padding-bottom: 2rem;
+    }
+    &-instagram {
+      &-box {
+        padding-right: 5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,211 @@
+.header {
+  min-height: 100rem;
+  background: linear-gradient(to bottom, rgba($primary-color, 0.8), rgba($secondary-color, 0.8)), url(../images/img-header-bg.jpg) no-repeat center / cover;
+  color: white;
+  &-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-top: 2rem;
+  }
+  &-logo {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+  }
+  &-menu-link {
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.25s linear;
+  }
+  &-menu-icon {
+    color: white;
+  }
+  &-content {
+    padding-top: 17rem;
+    max-width: 80rem;
+    text-align: center;
+    margin: 0 auto;
+    &-caption {
+      font-size: 7.2rem;
+      font-family: $third-font;
+      margin-bottom: 3rem;
+    }
+    &-title {
+      font-size: 15rem;
+      padding-bottom: 6rem;
+      margin-bottom: 5rem;
+      position: relative;
+      text-transform: uppercase;
+      font-weight: bold;
+      &:after {
+        content: "";
+        position: absolute;
+        @include size(6rem, 4px);
+        background-color: white;
+        bottom: 0;
+        @include absoluteCenter();
+      }
+    }
+    &-more {
+      color: white;
+      text-transform: uppercase;
+      border: 4px solid white;
+      padding: 1rem 3rem;
+      font-size: 1.4rem;
+      display: inline-block;
+      font-weight: bold;
+    }
+  }
+  &-bottom {
+    margin-top: 13rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &-item {
+      width: calc(25% - 30px);
+      color: white;
+      border-top: 4px solid white;
+      margin-right: 3rem;
+      padding-top: 2.5rem;
+      opacity: 0.6;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.2s linear;
+      &:before {
+        content: "";
+        @include size(7rem, 4px);
+        background-color: $primary-color;
+        position: absolute;
+        left: 0;
+        top: -4px;
+        opacity: 0;
+        transition: all 0.2s linear;
+      }
+      &:hover,
+      &.is-active{
+        opacity: 1;
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+    &-number {
+      font-size: 2.4rem;
+      margin-right: 1rem;
+      font-weight: bold;
+    }
+    &-text {
+      font-size: 1.8rem;
+    }
+  }
+  @include minWidth("768px") {
+    &-toggle {
+      display: none;
+    }
+    &-menu {
+      display: flex;
+      justify-content: space-between;
+      &-item:not(:last-child) {
+        margin-right: 5rem;
+      }
+    }
+    &-menu-link {
+      color: white;
+      text-transform: uppercase;
+      display: inline-block;
+      padding-bottom: 1rem;
+      border-bottom: 4px solid transparent;
+      transition: all 0.25s linear;
+      &:hover {
+        border-bottom-color: $secondary-color;
+        color: $secondary-color;
+      }
+    }
+  }
+  @include maxWidth("1023px") {
+    min-height: unset;
+    &-content {
+      padding-top: 10rem;
+    }
+    &-content-title {
+      font-size: 10rem;
+    }
+    &-bottom {
+      margin-top: 9rem;
+    }
+  }
+  @include maxWidth("767px") {
+    &-content {
+      padding-top: 5rem;
+    }
+    &-content-caption {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    &-content-title {
+      font-size: 5rem;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+    }
+    &-bottom {
+      margin-top: 5rem;
+    }
+    &-bottom-item {
+      padding-top: 1rem;
+      &:before {
+        width: 2rem;
+      }
+    }
+    &-bottom-number {
+      font-size: 1.7rem;
+      margin-right: 0.3rem;
+    }
+    &-bottom-text {
+      font-size: 1.3rem;
+    }
+    &-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 300px;
+      background-color: #fff;
+      padding: 20px 25px;
+      z-index: 10;
+      transform: translateX(100%);
+      transition: all 0.4s ease-in;
+      &.is-expand {
+        transform: translateX(0);
+      }
+    }
+    &-menu-link {
+      width: 100%;
+      color: $title-color;
+      padding: 1rem 1.5rem;
+      border-radius: 4px;
+      transition: all 0.25s linear;
+      &:hover {
+        color: white;
+        background-color: $secondary-color;
+      }
+    }
+    &-menu-icon {
+      display: inline-block;
+      width: 100%;
+      color: $title-color;
+      padding: 1rem 1.5rem;
+      border-radius: 4px;
+      transition: all 0.25s linear;
+      &:hover {
+        color: $primary-color;
+        background-color: $third-color;
+      }
+    }
+    &-toggle {
+      font-size: 2rem;
+      align-self: center;
+    }
+  }
+}

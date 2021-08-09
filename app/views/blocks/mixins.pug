@@ -1,0 +1,111 @@
+mixin menuItem(title, href = "javascript:void(0)")
+  li.header-menu-item
+    a.header-menu-link(href= href)= title
+
+mixin headerBottomItem(number, text, active = "")
+  .header-bottom-item(class = active)
+    span.header-bottom-number= number
+    span.header-bottom-text= text
+    
+mixin blockBox(caption, title, desc)
+  .block-box
+    h3.block-box-caption= caption
+    h2.block-box-heading= title
+    if desc
+      .block-box-desc= desc
+
+mixin aboutItem(href, text, icon, alt = "")
+  .about-item
+    img(src= href, alt= alt)
+    .about-content
+      i.about-icon(class = icon)
+      .about-text= text
+
+mixin serviceItem(src, title, desc)
+  .service-item
+    img.service-item-icon(src= src)
+    .service-item-info
+      .service-item-title= title 
+      .service-item-desc= desc
+
+mixin wedoItem(src, title, text, active = "")
+  .wedo-item(class= active)
+    .wedo-item-heading
+      img.wedo-item-img(src= src, alt="")
+      h3.wedo-item-title= title
+      i.fal.fa-angle-up.wedo-item-icon
+    .wedo-item-content
+      .wedo-item-text= text
+    
+mixin social(facebook, twitter, pinterest, instagram)
+  li.team-social-item
+    a(href= facebook).team-social-link 
+      i.fab.fa-facebook-f
+  li.team-social-item
+    a(href= twitter).team-social-link 
+      i.fab.fa-twitter
+  li.team-social-item
+    a(href= pinterest).team-social-link 
+      i.fab.fa-pinterest-p
+  li.team-social-item
+    a(href= instagram).team-social-link 
+      i.fab.fa-instagram
+
+mixin quoteItem(src, desc, author, type= "true")
+  .quote-item
+    if type == "true"
+      .quote-icon
+        img(src= src, alt="")
+    else
+      .quote-image
+        img(src=src, alt="")
+    .quote-info
+      p.quote-desc= desc
+      .quote-author= author
+
+mixin teamItem(src, name, position)
+  .team-item
+    .team-heading
+      img(src= src, alt="").team-image
+      .team-content
+        ul.team-social
+          if block
+            block
+    .team-info
+      .team-name= name
+      .team-position= position
+
+mixin workItem(src, title, desc)
+  .work-item 
+    img(src= src, alt="").work-item-img
+    .work-content
+      i.fa.fa-images.work-item-icon
+      h3.work-item-title= title
+      p.work-item-desc= desc
+
+mixin peopleItem(src, name, position, desc)
+  .people-item
+    img.people-item-avatar(src= src, alt="")
+    .people-item-info
+      h4.people-item-name= name
+      .people-item-position= position
+      p.people-item-desc= desc
+
+mixin storyItem(src, day, month, title, desc, number1, number2)
+  .story-item
+    .story-heading
+      img.story-heading-img(src= src, alt="")
+      .story-heading-date
+        .story-heading-day= day
+        .story-heading-month= month
+    .story-info
+      h3.story-title= title
+      .story-desc 
+        p.story-text= desc
+      .story-meta
+        .story-meta-item
+          i.fa.fa-eye.story-meta-icon
+          span.story-meta-number= number1
+        .story-meta-item
+          i.fa.fa-comment-dots.story-meta-icon
+          span.story-meta-number= number2

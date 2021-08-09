@@ -1,0 +1,77 @@
+.team {
+  padding: 10rem 0 12rem;
+  &-list {
+    @include flexbox;
+  }
+  &-item {
+    width: calc(33.33% - 2rem);
+    &:not(:last-child) {
+      margin-right: 3rem;
+    }
+  }
+  &-social {
+    @include flexbox;    
+    &-item {
+      &:not(:first-child) {
+        border-left: 1px solid $primary-color;
+      }
+    }
+    &-link {
+      @include flexbox(center, center);
+      @include size(5.7rem, 5.7rem);
+      color: $primary-color;
+      font-size: 2.5rem;
+      background-color: $secondary-color;
+      &:hover {
+        color: white;
+        background-color: $primary-color;
+      }
+    }
+  }
+  &-info {
+    text-align: center;
+  }
+  &-name {
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 3rem 0 1.5rem;
+    color: $title-color;
+  }
+  &-position {
+    font-size: 1.5rem;
+    font-family: $secondary-font;
+    font-style: italic;
+    font-weight: 300;
+    color: $text-color;
+  }
+  @include maxWidth("767px") {
+    padding: 5rem 0;
+    @include scrollItem();
+    &-item {
+      width: 90%;
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    &-social-link {
+      @include size(5rem, 5rem);
+      font-size: 2rem;
+    }
+  }
+}
+
+@include hoverImage(".team-heading", ".team-content");
+
+.banner {
+  background-color: $gray-light-color;
+  padding: 6.5rem 0 6rem;
+  &-logos {
+    margin: 0 1rem;
+  }
+  @include maxWidth("767px") {
+    padding: 4rem 0 3.5rem;
+  }
+}
