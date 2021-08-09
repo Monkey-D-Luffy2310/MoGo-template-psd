@@ -33,7 +33,7 @@ mixin wedoItem(src, title, text, active = "")
     .wedo-item-heading
       img.wedo-item-img(src= src, alt="")
       h3.wedo-item-title= title
-      i.fal.fa-angle-up.wedo-item-icon
+      i.fal.fa-angle-right.wedo-item-icon
     .wedo-item-content
       .wedo-item-text= text
     
@@ -92,7 +92,7 @@ mixin peopleItem(src, name, position, desc)
       p.people-item-desc= desc
 
 mixin storyItem(src, day, month, title, desc, number1, number2)
-  .story-item
+  a.story-item(href="#") 
     .story-heading
       img.story-heading-img(src= src, alt="")
       .story-heading-date

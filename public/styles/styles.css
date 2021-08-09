@@ -542,7 +542,8 @@ body {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
     padding: 1.1rem 1.5rem;
-    border: 1px solid #cccccc; }
+    border: 1px solid #cccccc;
+    cursor: pointer; }
   .wedo-item-img {
     margin-right: 1.5rem; }
   .wedo-item-title {
@@ -552,22 +553,26 @@ body {
     margin-left: auto;
     font-size: 3.5rem;
     color: #cccccc;
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-    margin-right: 0.5rem; }
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    margin-right: 0.5rem;
+    -webkit-transition: all .25s linear;
+    transition: all .25s linear; }
   .wedo-item-content {
-    padding: 2rem 0 2.5rem 2rem;
+    padding: 0;
     font-size: 1.5rem;
     font-family: "Roboto", sans-serif;
     font-style: italic;
     font-weight: 300;
     color: #999999;
-    border: 1px solid #cccccc;
-    border-top: 0;
-    display: none;
-    line-height: 1.5; }
+    border: none;
+    line-height: 1.5;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: all 0.35s ease-in;
+    transition: all 0.35s ease-in; }
   .wedo-item-text {
-    margin-right: 2.5rem;
+    margin: 2rem 2.5rem 2.5rem 2rem;
     padding-right: 2rem;
     height: 13.3rem;
     overflow-y: scroll; }
@@ -580,7 +585,10 @@ body {
       background: #f5f5f5;
       border-radius: 8px; }
   .wedo-item.is-active .wedo-item-content {
-    display: block; }
+    display: block;
+    border: 1px solid #cccccc;
+    height: 18rem;
+    border-top: 0; }
   .wedo-item.is-active .wedo-item-icon {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
@@ -1351,7 +1359,8 @@ body {
       background-color: #95e1d3;
       outline: none;
       border: none;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      cursor: pointer; }
   .footer-title {
     text-transform: uppercase;
     font-weight: 600;
