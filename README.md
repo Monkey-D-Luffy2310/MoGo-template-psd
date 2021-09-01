@@ -1,1 +1,1 @@
-Web: https://mo-go-template-psd.vercel.app/
+Web: https://mogo-project.vercel.app/
